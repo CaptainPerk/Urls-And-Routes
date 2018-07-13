@@ -16,7 +16,7 @@ namespace UrlsAndRoutes
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvc();
+            app.UseMvc(routes => routes.MapRoute(name: "default", template: "{controller}/{action}"));
         }
     }
 }
