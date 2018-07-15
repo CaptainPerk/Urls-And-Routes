@@ -7,10 +7,10 @@ namespace UrlsAndRoutes.Controllers
     {
         public ViewResult Index() => View("Result", new Result {Controller = nameof(HomeController), Action = nameof(Index)});
 
-        public ViewResult CustomVariable()
+        public ViewResult CustomVariable(string id)
         {
             Result result = new Result{ Controller = nameof(HomeController), Action = nameof(CustomVariable)};
-            result.Data["id"] = RouteData.Values["id"];
+            result.Data["id"] = id;
             return View("Result", result);
         }
     }
