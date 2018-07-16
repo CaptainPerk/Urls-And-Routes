@@ -7,6 +7,12 @@ namespace UrlsAndRoutes.Controllers
     {
         public ViewResult Index() => View("Result", new Result { Controller = nameof(CustomerController), Action = nameof(Index)});
 
-        public ViewResult List() => View("Result", new Result{ Controller = nameof(CustomerController), Action = nameof(List)});
+        public ViewResult List(string id)
+        {
+            Result result = new Result { Controller = nameof(CustomerController), Action = nameof(List)};
+            result.Data["id"] = id ?? "<no value>";
+            result.Data["catchall"] = RouteData.Values["catchall"];
+            return View("Result", result);
+        }
     }
 }
