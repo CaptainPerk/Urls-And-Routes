@@ -18,7 +18,7 @@ namespace UrlsAndRoutes
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
-                routes.MapRoute(name: "MyRoute", template: "{controller=Home}/{action=Index}/{id:int?}");
+                routes.MapRoute(name: "MyRoute", template: "{controller:regex(^H.*)=Home}/{action:regex(^Index$|^About$)=Index}/{id:int?}");
             });
         }
     }
