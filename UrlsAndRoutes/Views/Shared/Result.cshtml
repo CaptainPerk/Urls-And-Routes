@@ -28,7 +28,6 @@
         </tr>
     }
 </table>
-<a asp-controller="Home" asp-action="CustomVariable">This is an outgoing URL</a>
-<a asp-route="out">This is another outgoing URL</a>
+<p>URL: @Url.Action("CustomVariable", "Home", new { id = 100})</p>
 </body>
 </html>
