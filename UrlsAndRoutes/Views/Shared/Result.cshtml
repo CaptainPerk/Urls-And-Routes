@@ -28,6 +28,7 @@
         </tr>
     }
 </table>
-<p>URL: @Url.Action("CustomVariable", "Home", new { id = 100})</p>
+<a asp-route-legacyurl="/articles/Windows_3.1_Overview.html" class="btn btn-primary">This is an outgoing URL</a>
+<p>URL: @Url.Action(null, null, new { legacyurl = "/articles/Windows_3.1_Overview.html" })</p>
 </body>
 </html>
